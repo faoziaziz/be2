@@ -14,10 +14,12 @@ const https = require('https')
 
 
 // Certificate
-
+/*
 const privateKey = fs.readFileSync('/etc/letsencrypt/live/labseni.com/privkey.pem', 'utf8');
 const certificate = fs.readFileSync('/etc/letsencrypt/live/labseni.com/cert.pem', 'utf8');
 const ca = fs.readFileSync('/etc/letsencrypt/live/labseni.com/chain.pem', 'utf8');
+
+
 
 const credentials = {
 	key: privateKey,
@@ -25,6 +27,8 @@ const credentials = {
 	ca: ca
 };
 const httpsServer = https.createServer(credentials, app);
+*/
+
 /**
  * Get port from environment and store in Express.
  */
@@ -37,10 +41,13 @@ app.set('port', port);
  */
 
 var server = http.createServer(app);
+/*
 
 httpsServer.listen(8082, () => {
 	console.log('HTTPS Server running on port 443');
 });
+
+*/
 /**
  * Listen on provided port, on all network interfaces.
  */

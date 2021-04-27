@@ -1,0 +1,17 @@
+
+#+TITLE: API doc
+
+* Test post doc
+
+#+BEGIN_SRC bash
+curl --header "Content-Type: application/json" \
+  --request POST \
+  --data '{"target":"product",\
+"id":"This-is-id",\
+"title":"This is a title",\
+"short_desc":"This is short desc",\
+"long_desc":"This is long desc"}' \
+http://localhost:3000/api/itemhome
+
+#+END_SRC
+
