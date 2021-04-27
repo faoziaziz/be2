@@ -41,13 +41,13 @@ app.set('port', port);
  */
 
 var server = http.createServer(app);
-/*
+
 
 httpsServer.listen(8082, () => {
 	console.log('HTTPS Server running on port 443');
 });
 
-*/
+
 /**
  * Listen on provided port, on all network interfaces.
  */
