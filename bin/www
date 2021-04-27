@@ -14,7 +14,7 @@ const https = require('https')
 
 
 // Certificate
-/*
+
 const privateKey = fs.readFileSync('/etc/letsencrypt/live/labseni.com/privkey.pem', 'utf8');
 const certificate = fs.readFileSync('/etc/letsencrypt/live/labseni.com/cert.pem', 'utf8');
 const ca = fs.readFileSync('/etc/letsencrypt/live/labseni.com/chain.pem', 'utf8');
@@ -27,7 +27,7 @@ const credentials = {
 	ca: ca
 };
 const httpsServer = https.createServer(credentials, app);
-*/
+
 
 /**
  * Get port from environment and store in Express.
