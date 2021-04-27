@@ -28,32 +28,17 @@ const object_c = {
 
 router.get('/itemhome', async (req, res, next)=>{
     //res.send('Just send with test');
-    console.log(JSON.stringify(lsdata));
-    
+//    console.log(JSON.stringify(lsdata));
 
+    if (await isExists("lsdata")){
+	const value = await get('lsdata')
+	res.json(JSON.parse(value))
 
-    
-    //reply=get("lsdata");
-    console.log("dari redis");
+    } else {
+	
+	res.json(req.body);
 
-
-    const value = await get('lsdata')
-    console.log("ini uuid ampas")
-    
- 
-    res.json(JSON.parse(value))
-
-
-
-    
-    
-
-    /* show all id data */
-    lsdata.product.items.map(item=>(
-	console.log(item.id)
-
-    ));
-
+    }
     
 }); 
 
@@ -108,8 +93,8 @@ router.post('/itemhome', async (req, res, next)=>{
     object_c.shortdesc=req.body.shortdesc
     object_c.longdesc=req.body.longdesc
 
-    if(isExists("lsdata")){
-	console.log("lsdata ada")
+    if(await isExists("lsdata")){
+	//console.log("lsdata ada")
 	lsdata = JSON.parse(await get("lsdata"))
     } else {
 	console.log("not exist lsdata")
@@ -143,9 +128,7 @@ router.post('/itemhome', async (req, res, next)=>{
 
 
 router.get('/testparam', async (req, res, next)=>{
-    console.log("testerd")
-    console.log(req.param('search'))
-    req.query.target;
+    
     res.json({
 	name: "akh"
 	
